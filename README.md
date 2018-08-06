@@ -23,23 +23,19 @@ Therefore, OUTPUT = ? = 0.
 
 -   ![sigmoid equation](http://latex2png.com/output//latex_0af6f360fcff02afe033d0c48298e3b2.png)
 
--   ![](http://latex2png.com/output//latex_d1c4f1bb9eb5c1e197f1cd0ae956d899.png)
+-   ![](http://quicklatex.com/cache3/d8/ql_305dedd0b089ee2f7ad57932934072d8_l3.png)
 
 #### Weight Map
 
-POSITIVE ----> MORE to 1  
-NEGATIVE ----> MORE to 0  
+POSITIVE ----> **Matters more**
+NEGATIVE ----> **Matters less**
 
-[1,0,1,1,0][1]  
-[0,0,1,0,0][0]  
-[1,1,1,0,1][1]  
-[1,0,0,1,1][1]  
 
 #### TO-DO:
 
 -   [x] Set up randomized pattern generation
 -   [x] Be able to activate neurons and adjust weights
--   [ ] Forward propagations
+-   [x] Forward propagations
 -   [ ] Backwards propagations
 -   [ ] Iteration function
 
