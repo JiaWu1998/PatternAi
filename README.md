@@ -1,6 +1,8 @@
 # PatternAi
 
-This is a simple AI that learns how to spit an output from supervised data.  
+This is a simple AI that learns how to spit an output from supervised data. 
+
+The relationship of each individual sets of patterns **is not accounted for**.
 
 | Data Samples |    Input    | Expected Output |
 | :----------: | :---------: | :-------------: |
@@ -21,15 +23,50 @@ Therefore, OUTPUT = ? = 0.
 
 ### Equations
 
--   ![sigmoid equation](http://latex2png.com/output//latex_0af6f360fcff02afe033d0c48298e3b2.png)
+-   ![Sigmoid equation](http://latex2png.com/output//latex_0af6f360fcff02afe033d0c48298e3b2.png)
 
--   ![](http://quicklatex.com/cache3/d8/ql_305dedd0b089ee2f7ad57932934072d8_l3.png)
+-   ![Calculate activation](http://latex.codecogs.com/gif.latex?x%20%3D%20%5Cfrac%7B%5Csum%20%28wa%29%20&plus;%20%5C%20randomized%20%5C%20bias%7D%7Bnumber%20%5C%20of%20%5C%20neurons%7D)
+-   ![Nudge Value](http://latex.codecogs.com/gif.latex?%5Clambda%20%28x%29%20%3D%20%5Csum%28x%20-%20t%29%5E%7B2%7D)
+-   ![](http://latex.codecogs.com/gif.latex?N%28x%29%3D%20c%20%5Clambda%20%28x%29) 
+  
+**_// C is the nudge direction, and lambda is the nudge vaue_**
+  
 
-#### Weight Map
+### Neuron Layers
+    [
+        [50 sets of input combinations],
+        [193 sets of complex filter combinations]
+    ]
 
-POSITIVE ----> **Matters more**
-NEGATIVE ----> **Matters less**
+## Weight Map
 
+- POSITIVE ----> **Matters more**
+- NEGATIVE ----> **Matters less**
+
+
+**Weight Map Array**
+
+    [
+        [ 193 Sets of relational synapses],
+        [ 2 sets of 193 synapses]
+    ]
+    // Relational synapses are the connections between two neurons that are the same.
+    // Non-Relational synapses are undecided connections between two synapses.
+
+### Activation Array
+    [
+        [50 activations],
+        [193 activations],
+        [2 activations] // [0, 1]
+    ]
+
+### Nudge Direction
+    [
+        [2 nudge directions],
+        // Nudge direction at index 0 => '0' connections
+        // Nnudge direction at index 1 => '1 conections
+        [193 nudge directions] // For each neuron in order
+    ]
 
 #### TO-DO:
 
